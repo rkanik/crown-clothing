@@ -1,5 +1,7 @@
 import React from "react"
 
-const Home = () => (
-   
-)
+import Categories from "../../components/home/categories-overview/categories-overview"
+
+const Home = () => <Categories />
+
+export default Home
