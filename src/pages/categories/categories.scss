@@ -1,0 +1,14 @@
+.category-box {
+  width: 70%;
+  height: 12rem;
+  position: relative;
+  margin: 0.5rem;
+  border-radius: 0.2rem;
+  overflow: hidden;
+  .cat-name {
+    text-transform: uppercase;
+    font-weight: normal;
+    letter-spacing: 2px;
+    color: white;
+  }
+}

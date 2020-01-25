@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 /** Categories Data */
 import categories from "../../../js/categories"
+
 /** Styles */
 import "./categories-overview.scss"
 
