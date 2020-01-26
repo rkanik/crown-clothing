@@ -4,6 +4,8 @@ import React from 'react';
 import Home from "../pages/home/home"
 import Categories from "../pages/categories/categories"
 import Category from "../pages/category/category"
+import Signin from "../pages/authentication/signin/signin"
+import Register from "../pages/authentication/register/register"
 
 /** Router */
 import { BrowserRouter, Route, Switch } from "react-router-dom"
@@ -15,6 +17,8 @@ const Router = () => {
             <Route exact path='/' component={Home} />
             <Route exact path='/categories' component={Categories} />
             <Route path='/categories/:category' component={Category} />
+            <Route exact path='/auth/signin' component={Signin} />
+            <Route exact path='/auth/register' component={Register} />
          </Switch>
       </BrowserRouter >
    );
