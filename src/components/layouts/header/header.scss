@@ -1,0 +1,40 @@
+.header {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  //margin-bottom: 0.54rem;
+  padding: 0 2rem 0 2rem;
+
+  .logo-container {
+    height: 100%;
+    width: 70px;
+    padding: 1rem;
+  }
+
+  .options {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .option {
+      padding: 10px 15px;
+      color: #212121;
+      border-radius: 0.2rem;
+      transition: background-color 0.3s ease-in-out;
+      margin-right: 1rem;
+      &:hover {
+        background-color: #bbdefb;
+      }
+      &.active {
+        background-color: #2196f3;
+        color: white;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

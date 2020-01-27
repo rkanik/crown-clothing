@@ -11,7 +11,9 @@ import {
 }
    from "@material-ui/core"
 
-import { Visibility, VisibilityOff, Facebook, GitHub } from "@material-ui/icons"
+import { Visibility, VisibilityOff } from "@material-ui/icons"
+
+import { signInWithGoogle, auth } from "../../../firebase/firebase.utils"
 
 class signin extends React.Component {
 
@@ -21,6 +23,12 @@ class signin extends React.Component {
          userName: "", password: '',
          showPassword: false
       }
+   }
+
+   componentDidMount = async () => {
+      auth.onAuthStateChanged(({ displayName, photoURL, email }) => {
+         console.log({ displayName, photoURL, email })
+      })
    }
 
    onFormChange = ({ target }) => {
@@ -43,26 +51,36 @@ class signin extends React.Component {
          }
       }))
    }
-
    handleSignin = () => {
       console.log(this.state.formValues)
    }
-
    render() {
       return (
-         <div className='signin h-100 w-100'>
+         <div className='signin pos-rel h-100 w-100'>
             <div className="pos-abs to-center">
                <div className='upper-box pos-abs'>
-                  <h3>Signin</h3>
+                  <h3>Signin with</h3>
                   <hr className='mb-6' />
                   <div>
-                     <Button className='mr-4' variant='contained' style={{ backgroundColor: "#1976d2", color: "#ffffff" }}>
-                        <Facebook />
-                        <span style={{ marginLeft: "10px" }}>Facebook</span>
+                     <Button
+                        onClick={signInWithGoogle}
+                        className='mr-4'
+                        size='small'
+                        variant='contained'
+                        style={{
+                           backgroundColor: "#f44336",
+                           color: "#ffffff",
+                           padding: "0.6rem 0"
+                        }}>
+                        <i className="fab fa-google"></i>
                      </Button>
-                     <Button variant='contained' color='secondary'>
-                        <GitHub />
-                        <span style={{ marginLeft: "10px" }}>Github</span>
+                     <Button className='mr-4' size='small' variant='contained' style={{ backgroundColor: "#1976d2", color: "#ffffff", padding: "0.6rem 0" }}>
+                        <i className="fab fa-facebook"></i>
+                     </Button>
+                     <Button variant='contained' size='small' style={{ backgroundColor: "#2196f3", color: "#ffffff", padding: "0.6rem 0" }}>
+                        <i className="fab fa-twitter"></i>
+                        {/* <GitHub /> */}
+                        {/* <span style={{ marginLeft: "10px" }}>Github</span> */}
                      </Button>
                   </div>
                </div>
