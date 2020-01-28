@@ -2,7 +2,7 @@
    "name": "crwn-cloting",
    "version": "0.1.0",
    "private": true,
-   "homepage": "https://crwn-clothing.netlify.com/",
+   "homepage": "https://react-projects-c80d2.firebaseapp.com/",
    "dependencies": {
       "@material-ui/core": "^4.9.0",
       "@material-ui/icons": "^4.5.1",
